@@ -1,0 +1,9 @@
+![Civil Services Logo](https://raw.githubusercontent.com/CivilServiceUSA/api/master/docs/img/logo.png "Civil Services Logo")
+
+__Civil Services__ is a collection of tools that make it possible for citizens to be a part of what is happening in their Local, State & Federal Governments.
+
+
+GeoJSON
+===
+
+This directory is for storing a GeoJSON file.

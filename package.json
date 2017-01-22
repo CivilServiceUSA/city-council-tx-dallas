@@ -1,0 +1,73 @@
+{
+  "name": "civil-services-city-council-tx-dallas",
+  "version": "1.0.0",
+  "description": "City Council Data for Dallas, TX ( JSON, XML, CSV, SQL & YML formats )",
+  "license": "MIT",
+  "keywords": [
+    "Civil Services",
+    "US",
+    "United States",
+    "City Council",
+    "Dallas",
+    "TX",
+    "data",
+    "json",
+    "csv",
+    "yml",
+    "sql",
+    "xml",
+    "xlsx",
+    "headshots",
+    "pictures",
+    "photos",
+    "map"
+  ],
+  "cityData": {
+    "state_code": "TX",
+    "city_name": "Dallas",
+    "city_population": "1300092",
+    "city_website": "http://dallascityhall.com",
+    "public_records": "",
+    "latitude": "32.7757",
+    "longitude": "-96.7967"
+  },
+  "main": "data/city-council.json",
+  "homepage": "https://civilserviceusa.github.io/city-council-tx-dallas/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/civilserviceusa/city-council-tx-dallas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/civilserviceusa/city-council-tx-dallas/issues"
+  },
+  "author": {
+    "name": "Peter Schmalfeldt",
+    "email": "me@peterschmalfeldt.com",
+    "url": "https://peterschmalfeldt.com"
+  },
+  "scripts": {
+    "json-to-yml": "if ( test -e ./city-council/data/city-council-data.json ); then ./node_modules/.bin/json2yaml ./city-council/data/city-council-data.json > ./city-council/data/city-council-data.yml && echo '✓ Updated city-council/data/city-council-data.yml'; else echo '\n× Missing ./city-council/data/city-council-data.json ( npm run -s convert-csv )\n'; fi",
+    "json-to-xml": "if ( test -e ./city-council/data/city-council-data.json ); then node ./.scripts/json-to-xml.js && echo '✓ Updated city-council/data/city-council-data.xml'; else echo '\n× Missing ./city-council/data/city-council-data.json ( npm run -s convert-csv )\n'; fi",
+    "csv-to-sql": "if ( test -e ./city-council/data/city-council-data.json ); then node ./.scripts/csv-to-sql.js && echo '✓ Updated city-council/data/city-council-data.sql'; else echo '\n× Missing ./city-council/data/city-council-data.json ( npm run -s convert-csv )\n'; fi",
+    "csv-to-json": "if ( test -e ./city-council/data/city-council-data.json ); then ./node_modules/.bin/csvtojson ./city-council/data/city-council-data.csv > ./city-council/data/city-council-data.json && echo '✓ Updated city-council/data/city-council-data.json'; else echo '\n× Missing ./city-council/data/city-council-data.json ( npm run -s convert-csv )\n'; fi",
+    "resize-headshots": "node ./.scripts/resize-headshots.js",
+    "resize-backgrounds": "node ./.scripts/resize-backgrounds.js",
+    "console-headshots": "node ./.scripts/console-headshots.js",
+    "convert-csv": "if ( test -e ./uploads/city-council-data.csv ); then node ./.scripts/convert-csv.js; else echo '\n× Missing ./uploads/city-council-data.csv ( see ./uploads/README.md )\n'; fi",
+    "build-images": "npm run -s resize-headshots && npm run -s resize-backgrounds && echo '\n☆ Image Conversion Complete\n'",
+    "build-data": "if ( test -e ./city-council/data/city-council-data.json ); then npm run -s csv-to-json && npm run -s json-to-yml && npm run -s json-to-xml && npm run -s csv-to-sql && echo '\n☆ Data Conversion Complete\n'; else echo '\n× Missing ./uploads/city-council-data.csv ( see ./uploads/README.md )\n'; fi",
+    "build": "if ( test -e ./uploads/city-council-data.csv ); then npm run -s convert-csv && npm run -s build-data && npm run -s build-images && echo '\n☆ヽ(´▽｀)ノ All Done \n'; else echo '\n× Missing ./uploads/city-council-data.csv ( see ./uploads/README.md )\n'; fi"
+  },
+  "devDependencies": {
+    "csvtojson": "^1.1.2",
+    "fast-csv": "^2.3.0",
+    "glob": "^7.1.1",
+    "gm": "^1.23.0",
+    "js2xmlparser": "^2.0.2",
+    "json2csv": "^3.7.3",
+    "json2yaml": "^1.1.0",
+    "object.values": "^1.0.4",
+    "slug": "^0.9.1",
+    "stream-replace": "^1.0.0"
+  }
+}
