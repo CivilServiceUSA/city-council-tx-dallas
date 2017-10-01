@@ -14,9 +14,9 @@ Update CSV File
 
 This City Council Data is maintained in a Google Spreadsheet.  
 
-* Go to [City Council Data](http://bit.ly/city-council-tx-dallas)
+* Go to [City Council Data](https://docs.google.com/spreadsheets/d/1ucltxaSkF07EM-CcvCRwCNp66HN-vsgxsi88ntwSsyw/edit#gid=0)
 * Select `File > Download as > Comma-separated values (.csv, current sheet)`
-* Save file as `./uploads/city-council-data.csv`
+* Save file as `./source/city-council-data.csv`
 
 
 Update City Photo
@@ -28,11 +28,11 @@ This image is for web services that will display City Council Member listings on
 
 * Image should reflect a famous landmark of the city
 * Image be licensed for NonCommercial use
-* Edit the `uploads/city.jpg` image with the photo you selected
+* Edit the `./source/city.jpg` image with the photo you selected
 
 #### Image Automation:
 
-The `uploads/city.jpg` image will be automatically converted to the following sizes:
+The `./source/city.jpg` image will be automatically converted to the following sizes:
 
 * 640x360 ( stored in `city-council/images/backgrounds/640x360` )
 * 960x540 ( stored in `city-council/images/backgrounds/960x540` )
@@ -46,12 +46,12 @@ City Councilor Headshots
 #### Image Guidelines:
 
 1. Find and download a High Resolution Images for each City Councilor
-2. Use a Photo Editor ( [https://pixlr.com/editor/](https://pixlr.com/editor/) if you do not already have one ) and export an image with a name like `firstname-lastname.jpg` ( using their actual first and last name, all lower case letters, using only letters a-z and replace all spaces with dashes ). Make sure the image is exactly 1024 pixels wide by 1024 pixels tall ( Download [./templates/headshot.jpg](./templates/headshot.jpg) if you need an image template )
-3. Upload the file named something like `firstname-lastname.jpg` into this `./uploads/headshots/` directory
+2. Use a Photo Editor ( [https://pixlr.com/editor/](https://pixlr.com/editor/) if you do not already have one ) and export an image with a name like `firstname-lastname.jpg` ( using their actual first and last name, all lower case letters, using only letters a-z and replace all spaces with dashes ). Make sure the image is exactly 1024 pixels wide by 1024 pixels tall.
+3. Upload the file named something like `firstname-lastname.jpg` into this `./source/headshots/` directory
 
 #### Image Automation:
 
-The `./uploads/headshots/` images will be automatically converted to the following sizes:
+The `./source/headshots/` images will be automatically converted to the following sizes:
 
 * 64x64 ( stored in `city-council/images/headshots/64x64` )
 * 128x128 ( stored in `city-council/images/headshots/128x128` )

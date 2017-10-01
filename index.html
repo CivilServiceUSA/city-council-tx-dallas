@@ -1,0 +1,214 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Dallas, TX City Council</title>
+
+    <meta http-equiv="Content-Security-Policy" content="img-src *; default-src * 'self' gap: ws:; style-src 'self' 'unsafe-inline' https://cdn.civil.services https://cdnjs.cloudflare.com https://fonts.googleapis.com https://storage.googleapis.com; font-src 'self' data: https://cdnjs.cloudflare.com https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.civil.services https://code.jquery.com https://storage.googleapis.com;">
+
+    <meta name="description" content="Dallas, TX City Council">
+    <meta name="keywords" content="Civil, Services, Local, Government, Dallas, TX City Council" />
+    <meta name="author" content="Civil Services">
+    <meta name="robots" content="noodp,noydir">
+    <meta name="robots" content="index,follow">
+    <meta name="coverage" content="worldwide">
+    <meta name="cache-control" content="public">
+    <meta name="googlebot" content="index,follow">
+
+    <!-- Mobile Metadata -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="City Council">
+    <meta name="application-name" content="City Council">
+
+    <!-- Twitter Metadata -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Civil Services - Dallas, TX City Council">
+    <meta name="twitter:site" content="@CivilServiceUSA">
+    <meta name="twitter:creator" content="@CivilServiceUSA">
+    <meta name="twitter:description" content="Dallas, TX City Council">
+    <meta name="twitter:image" content="https://civilserviceusa.github.io/city-council-tx-dallas/city-council/images/backgrounds/1280x720/city.jpg">
+    <meta name="twitter:image:alt" content="Civil Services - Dallas, TX City Council">
+    <meta name="twitter:domain" content="civil.services">
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Civil Services - Dallas, TX City Council">
+    <meta property="og:url" content="https://civilserviceusa.github.io/city-council-tx-dallas/">
+    <meta property="og:image" content="https://civilserviceusa.github.io/city-council-tx-dallas/city-council/images/backgrounds/1280x720/city.jpg">
+    <meta property="og:site_name" content="Civil Services">
+    <meta property="og:description" content="Dallas, TX City Council">
+
+    <!-- Dublin Core Metadata -->
+    <meta name="dc:language" content="en_US">
+    <meta name="dc:title" content="Civil Services - Dallas, TX City Council">
+    <meta name="dc:source" content="https://civilserviceusa.github.io/city-council-tx-dallas/">
+    <meta name="dc:description" content="Dallas, TX City Council">
+
+    <!-- App Icons -->
+    <link rel="shortcut icon" href="https://cdn.civil.services/app-icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.civil.services/app-icons/favicon-retina-ipad.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.civil.services/app-icons/favicon-retina-iphone.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.civil.services/app-icons/favicon-standard-ipad.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.civil.services/app-icons/favicon-standard-iphone.png">
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-orange.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Local Styles -->
+    <link rel="stylesheet" href="source/www/city-council.css">
+
+</head>
+
+<body>
+
+<!-- Page preloader -->
+<div id="loading">
+    <div id="preloader">
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<section>
+    <header>
+        <h1 onclick="scrolltoTop(); return false;">Dallas City Council</h1>
+    </header>
+
+    <div class="councilors scrollbar" id="scroll-wrapper">
+        <div class="wrapper force-overflow"></div>
+        <div class="push"></div>
+    </div>
+
+    <div class="footer animated fadeInUpBig">
+        <a href="#" onclick="openSearch(); return false;" title="Search City Council"><label class="badge animated bounceInUp" id="search-total"></label><i class="fa fa-fw fa-2x fa-search"></i><span>Search</span></a>
+        <a href="https://twitter.com/CivilServiceUSA" target="_blank" title="Visit Civil Services Twitter"><i class="fa fa-fw fa-2x fa-twitter"></i><span>@CivilServiceUSA</span></a>
+        <a href="https://github.com/CivilServiceUSA" target="_blank" title="Visit Civil Services Github"><i class="fa fa-fw fa-2x fa-github"></i><span>Github</span></a>
+        <a href="https://github.com/CivilServiceUSA/city-council-tx-dallas" target="_blank" title="Download Open Source City Council data"><i class="fa fa-fw fa-2x fa-cloud-download"></i><span>Download Data</span></a>
+    </div>
+</section>
+
+<div class="modal fade-in c0">
+    <div class="modal-content fade-in c3 ">
+        <div class="">
+
+            <div class="filter-header">
+                <div class="control-group">
+                    <input type="text" name="q" id="search" onkeyup="doSearch()" placeholder="Search ..." autocomplete="off">
+                </div>
+
+                <div class="control-group stats">
+                    Showing: <span class="count"></span> of <span class="total"></span> ( <span class="percent"></span> )
+                </div>
+            </div>
+
+            <div class="filter-options scrollbar">
+                <div class="force-overflow">
+                    <div class="control-group">
+                        <h2><a href="javascript:void(0);" onclick="$('.filter-party').slideToggle(); $('.toggle-filter-party').toggleClass('fa-angle-down').toggleClass('fa-angle-right');" class="toggle-filter-button"><i class="fa fa-fw fa-angle-right toggle-filter-party"></i> Party</a></h2>
+                        <div class="toggle-filter filter-party">
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="constitution" id="party-constitution"> Constitution
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="democrat" id="party-democrat"> Democrat
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="independent" id="party-independent"> Independent
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="green" id="party-green"> Green
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="libertarian" id="party-libertarian"> Libertarian
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="nonpartisan" id="party-nonpartisan"> Nonpartisan
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="republican" id="party-republican"> Republican
+                                <div class="control__indicator"></div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h2><a href="javascript:void(0);" onclick="$('.filter-gender').slideToggle(); $('.toggle-filter-gender').toggleClass('fa-angle-down').toggleClass('fa-angle-right');" class="toggle-filter-button"><i class="fa fa-fw fa-angle-right toggle-filter-gender"></i> Gender</a></h2>
+                        <div class="toggle-filter filter-gender">
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="female" id="gender-female"> Female
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="male" id="gender-male"> Male
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="unspecified" id="gender-unspecified"> Unspecified
+                                <div class="control__indicator"></div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h2><a href="javascript:void(0);" onclick="$('.filter-ethnicity').slideToggle(); $('.toggle-filter-ethnicity').toggleClass('fa-angle-down').toggleClass('fa-angle-right');" class="toggle-filter-button"><i class="fa fa-fw fa-angle-right toggle-filter-ethnicity"></i> Ethnicity</a></h2>
+                        <div class="toggle-filter filter-ethnicity">
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="african-american" id="ethnicity-african-american"> African American
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="asian-american" id="ethnicity-asian-american"> Asian American
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="hispanic-american" id="ethnicity-hispanic-american"> Hispanic American
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="middle-eastern-american" id="ethnicity-middle-eastern-american"> Middle Eastern American
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="multi-racial-american" id="ethnicity-multi-racial-american"> Multi Racial American
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="native-american" id="ethnicity-native-american"> Native American
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="pacific-islander" id="ethnicity-pacific-islander"> Pacific Islander
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="white-american" id="ethnicity-white-american"> White American
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">
+                                <input type="checkbox" value="unspecified" id="ethnicity-unspecified"> Unspecified
+                                <div class="control__indicator"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay fade-in c0" onclick="closeSearch()"></div>
+</div>
+
+<script src="source/www/city-council.js"></script>
+
+</body>
+
+</html>
