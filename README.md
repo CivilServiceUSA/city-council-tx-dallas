@@ -2,6 +2,8 @@
 
 __Civil Services__ is a collection of tools that make it possible for citizens to be a part of what is happening in their Local, State & Federal Governments.
 
+[![Donate](https://cdn.civil.services/donate-button.png)](https://www.paypal.me/civilservices)
+
 
 City Council Data for Dallas, TX
 ===
